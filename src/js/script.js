@@ -94,6 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const randomIndex = Math.floor(Math.random() * alertVariables.length);
           showAlert(alertVariables[randomIndex]);
           form.reset();
+          emailWarning.classList.remove('active')
           if (submitButton) {
             submitButton.disabled = false;
           }
