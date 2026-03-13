@@ -1,0 +1,93 @@
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  color: $white;
+  text-align: center;
+
+  &__head {
+    transform: rotate(-2deg);
+    @include media-breakpoint-up(md) {
+      margin-inline: -68px;
+    }
+  }
+  &__title {
+    font-family: $headings-font-family;
+    font-weight: $weight-extra-bold;
+    line-height: 1;
+    font-size: 40px;
+    margin: 0;
+    @include media-breakpoint-up(sm) {
+      font-size: 64px;
+    }
+    span {
+      color: $primary-color;
+    }
+  }
+  &__subtitle {
+    font-family: $headings-font-family;
+    font-weight: $weight-semi-bold;
+    @include media-breakpoint-up(sm) {
+      font-size: 24px;
+    }
+    span {
+      color: $primary-color;
+    }
+  }
+  &__text {
+    margin-block: 12px 0;
+    font-weight: $weight-medium;
+    span {
+      color: $primary-color;
+    }
+  }
+  &__content {
+    max-width: 486px;
+  }
+  &__info {
+    display: grid;
+    grid-gap: 12px;
+    @include media-breakpoint-up(xs) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    &-label {
+      position: relative;
+      padding: 12px;
+      font-size: 18px;
+      min-height: 47px;
+      border-radius: $border-radius-xl;
+      color: $white;
+      background: linear-gradient(0deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.14)),
+      linear-gradient(101.59deg, rgba(255, 255, 255, 0.2) 12.49%, rgba(255, 255, 255, 0) 58.51%);
+      backdrop-filter: blur(36px);
+      box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.05), 0 0 15px 0 rgba(212, 255, 179, 0.15);
+      margin: 0;
+      &:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        inset: 0;
+        padding: 1px;
+        border-radius: $border-radius-xl;
+        background: linear-gradient(125.12deg, rgba(255, 255, 255, 0.64) -8.44%, rgba(255, 255, 255, 0) 83.93%);
+        mask: linear-gradient(#000 0 0) exclude, linear-gradient(#000 0 0) content-box;
+      }
+    }
+  }
+  &__button {
+    max-width: 311px;
+    min-height: 48px;
+    &::after {
+      content: '';
+      display: block;
+      width: 32px;
+      aspect-ratio: 1/1;
+      background-color: currentColor;
+      mask: url("images/stack.svg#save");
+    }
+  }
+}

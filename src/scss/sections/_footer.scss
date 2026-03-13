@@ -1,0 +1,95 @@
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+
+.footer {
+  margin-top: auto;
+  background-color: $assent-bg;
+  color: $grey-font-color;
+  padding-block: 48px;
+  @include media-breakpoint-up(md) {
+    padding-block: 64px;
+  }
+
+  a {
+    color: currentColor;
+    text-decoration: none;
+    @media (hover: hover) {
+      &:hover {
+        color: $primary-color
+      }
+    }
+  }
+
+  &__nav,
+  &__bottom {
+    display: grid;
+  }
+
+  &__nav {
+    &-list {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      gap: 24px;
+      grid-gap: 16px;
+      @include media-breakpoint-up(sm) {
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, auto);
+
+      }
+    }
+  }
+
+  &__bottom {
+    border-top: 1px solid #4D4D4D;
+    padding-top: 16px;
+    margin-top: 32px;
+    grid-gap: 12px;
+    @include media-breakpoint-up(md) {
+      margin-top: 48px;
+      grid-gap: 24px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include media-breakpoint-up(lg) {
+      grid-gap: 16px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__socials {
+    @include media-breakpoint-down(sm) {
+      min-width: 100%;
+    }
+  }
+
+  &__links,
+  &__copyright {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__copyright {
+    gap: 8px;
+    @include media-breakpoint-between(sm, lg) {
+      grid-column-start: span 2;
+    }
+
+    &-logo {
+      margin-right: 12px;
+    }
+  }
+
+  &__links {
+    gap: 12px;
+  }
+
+  &__text {
+    display: block;
+    margin: 0;
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,169 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  min-height: 100vh;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+  font-size: 18px;
+  font-family: $font-family-base;
+  font-weight: $weight-normal;
+  line-height: $base-line-height;
+  color: $base-font-color;
+  background-color: $base-bg;
+  &:has(.alert) {
+    overflow: hidden;
+    &::before {
+      content: '';
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(33, 33, 33, 0.2);
+      z-index: 10;
+    }
+  }
+}
+
+img {
+  max-width: 100%;
+  object-fit: contain;
+  vertical-align: middle;
+  height: auto;
+}
+a {
+  transition: color $trans-primary;
+}
+svg {
+  fill: currentColor;
+}
+
+.sr-only {
+  @include sr-only;
+}
+.main {
+  position: relative;
+  overflow: hidden;
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.3;
+    min-height: 1080px;
+    background:
+      radial-gradient(57.86% 58.15% at 50% 50%, #000000 31.95%, rgba(0, 0, 0, 0) 100%),
+      url("images/bg-body.png") center top / 1920px no-repeat;
+    animation: main-bg 5.9s ease-in-out infinite;
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 1;
+    &::before,
+    &::after{
+      content: '';
+      position: absolute;
+      width: 1356px;
+      aspect-ratio: 902/852;
+      background: url("images/bubles.svg") center / contain no-repeat;
+    }
+    &::before {
+      left: -500px;
+      top: 12%;
+      @include media-breakpoint-up(sm) {
+        top: 6%;
+      }
+      @include media-breakpoint-up(lg) {
+        top: 0;
+      }
+    }
+    &::after {
+      left: 0;
+      top: 23%;
+      @include media-breakpoint-up(lg) {
+        top: 15%;
+      }
+    }
+    section {
+      position: relative;
+      z-index: 2;
+    }
+  }
+}
+
+@keyframes main-bg {
+  0%, 68% {
+    opacity: 0.6;
+    background:
+      radial-gradient(57.86% 58.15% at 50% 50%, #000000 31.95%, rgba(0, 0, 0, 0) 100%),
+      url("images/bg-body.png") center top / 1920px no-repeat;
+  }
+
+  69%, 71% {
+    opacity: 1;
+    background: url("images/bg-body.png") center top / 1920px no-repeat;
+  }
+
+  80%, 81% {
+    opacity: 0.6;
+    background:
+      radial-gradient(57.86% 58.15% at 50% 50%, #000000 31.95%, rgba(0, 0, 0, 0) 100%),
+      url("images/bg-body.png") center top / 1920px no-repeat;
+  }
+  90%, 92% {
+    opacity: 1;
+    background:
+      radial-gradient(57.86% 58.15% at 50% 50%, #000000 31.95%, rgba(0, 0, 0, 0) 100%),
+      url("images/bg-body.png") center top / 1920px no-repeat;
+  }
+
+  100% {
+    opacity: 0.6;
+    background:
+      radial-gradient(57.86% 58.15% at 50% 50%, #000000 31.95%, rgba(0, 0, 0, 0) 100%),
+      url("images/bg-body.png") center top / 1920px no-repeat;
+  }
+}
+//Container
+.container{
+  width: 100%;
+  padding-inline: 16px;
+  margin-inline: auto;
+  max-width: 1168px + 32px;
+  @include media-breakpoint-up(sm) {
+    padding-inline: 32px;
+  }
+}
+.container-narrow {
+  width: 100%;
+  padding-inline: 16px;
+  margin-inline: auto;
+  @include media-breakpoint-up(md) {
+    max-width: 568px + 32px;
+  }
+  @include media-breakpoint-up(xl) {
+    padding-inline: 68px;
+    max-width: 805px;
+  }
+}
+.standard-margin {
+  margin-block: 40px;
+  @include media-breakpoint-up(xs) {
+    margin-block: 48px;
+  }
+  @include media-breakpoint-up(md) {
+    margin-block: 64px;
+  }
+}

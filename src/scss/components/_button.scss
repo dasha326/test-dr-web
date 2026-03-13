@@ -1,0 +1,83 @@
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  -webkit-appearance: none;
+  color: inherit;
+  transition: color $trans-primary, background-color $trans-primary, border-color $trans-primary;
+  cursor: pointer;
+}
+
+.button {
+  $button: &;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  justify-content: center;
+  gap: 16px;
+  font-size: $btn-font-size;
+  font-weight: $btn-font-weight;
+  line-height: 1;
+  padding: $btn-padding-y $btn-padding-x;
+  text-align: center;
+  border-radius: $border-radius;
+  min-height: $btn-min-height;
+  &.disabled,
+  &:disabled {
+    pointer-events: none;
+  }
+  &--primary {
+    background-color: $primary-color;
+    border: 1px solid $primary-color;
+    color: $white;
+    @media (hover: hover){
+      &:hover {
+        background-color: transparent;
+        color: $primary-color;
+      }
+    }
+    &.disabled,
+    &:disabled {
+      color: $grey-light-color;
+      background-color: #F8F8F8;
+      border-color: #F8F8F8;
+      cursor: none;
+    }
+  }
+  &--outline {
+    border: 2px solid $primary-color;
+    &.disabled,
+    &:disabled {
+      border-color: transparent;
+    }
+    @media (hover: hover) {
+      &:focus,
+      &:hover {
+        background-color: $primary-color;
+        color: $white;
+      }
+    }
+  }
+  &--outline-light {
+    border: 2px solid $white;
+    color: $white;
+    &.disabled,
+    &:disabled {
+      border-color: transparent;
+    }
+    @media (hover: hover) {
+      &:focus,
+      &:hover {
+        background-color: $white;
+        color: $grey-font-color;
+      }
+    }
+  }
+}

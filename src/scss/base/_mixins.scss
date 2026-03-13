@@ -1,0 +1,101 @@
+@use "variables" as *;
+@use "sass:map";
+
+// Добавление символа &, если не корневой селектор
+@mixin optional-at-root($selector) {
+  @if not & {
+    @at-root #{$selector} {
+      @content;
+    }
+  } @else {
+    @at-root #{selector-append(&, $selector)} {
+      @content;
+    }
+  }
+}
+
+// Визуальное скрытие элемента
+@mixin sr-only() {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  white-space: nowrap;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+// Круг
+@mixin circle($diameter, $radius: 50%) {
+  width: $diameter;
+  height: $diameter;
+  border-radius: $radius;
+}
+
+//Media queries
+@function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
+  $min: map.get($breakpoints, $name);
+  @if $min != 0 {
+    @return $min;
+  }
+
+  @return null;
+}
+
+@function breakpoint-max($name, $breakpoints: $grid-breakpoints) {
+  $max: map.get($breakpoints, $name);
+
+  @if $max and $max > 0 {
+    @return $max - .02;
+  }
+
+  @return null;
+}
+
+@function breakpoint-infix($name, $breakpoints: $grid-breakpoints) {
+  @if breakpoint-min($name, $breakpoints) == null {
+    @return "";
+  }
+
+  @return "-#{$name}";
+}
+@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
+  $min: breakpoint-min($name, $breakpoints);
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+@mixin media-breakpoint-down($name, $breakpoints: $grid-breakpoints) {
+  $max: breakpoint-max($name, $breakpoints);
+  @if $max {
+    @media (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+@mixin media-breakpoint-between($lower, $upper, $breakpoints: $grid-breakpoints) {
+  $min: breakpoint-min($lower, $breakpoints);
+  $max: breakpoint-max($upper, $breakpoints);
+
+  @if $min != null and $max != null {
+    @media (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  } @else if $max == null {
+    @include media-breakpoint-up($lower, $breakpoints) {
+      @content;
+    }
+  } @else if $min == null {
+    @include media-breakpoint-down($upper, $breakpoints) {
+      @content;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  @include media-breakpoint-up(xs) {
+    gap: 24px;
+  }
+  &__item {
+    width: 24px;
+    aspect-ratio: 1/1;
+    transition: transform $trans-primary;
+    @media (hover: hover) {
+      &:hover {
+        transform: translateY(-5px);
+      }
+    }
+  }
+}

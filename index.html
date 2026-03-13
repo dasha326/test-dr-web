@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тестовое</title>
+    <link rel="stylesheet" href="src/styles.min.css">
+</head>
+<body>
+<main class="main">
+  <div class="main__inner container-narrow">
+    <section class="hero standard-margin">
+      <img class="hero__logo"  src="src/images/logo.svg" alt="Логотип сайта" width="143" height="25">
+      <div class="hero__head">
+        <h1 class="hero__title">Dr.Web VirLabConf <span>2.0</span></h1>
+        <p class="hero__subtitle">
+          Только для своих — <span>закрытая конференция</span> антивирусной лаборатории Dr.Web.
+          Идеальное место для того, чтобы узнать <span>о&nbsp;новейших киберугрозах,</span> их эволюции и способах защиты.
+        </p>
+      </div>
+      <div class="hero__content">
+        <div class="hero__info">
+          <p class="hero__info-label">Дата: 4 апреля 2025</p>
+          <p class="hero__info-label">Время: 10:30</p>
+        </div>
+        <p class="hero__text">
+          <span>Bolshevik Loft,</span> Ленинградский проспект, 15, стр. 1 (БЦ&nbsp;«Большевик»), г.&nbsp;Москва
+        </p>
+      </div>
+
+      <a class="hero__button button button--outline-light" type="button" download target="_blank">Программа мероприятия</a>
+    </section>
+    <section class="form-section standard-margin">
+      <h2 class="form-section__title">Заполните форму регистрации</h2>
+      <form class="form" action="#" method="post" data-form novalidate>
+        <label class="form__group">
+          <span class="form__label">Фамилия, Имя</span>
+          <input class="form__input" type="text" name="fullName" required>
+        </label>
+        <label class="form__group">
+          <span class="form__label">Компания</span>
+          <input class="form__input" type="text" name="company" required>
+        </label>
+        <label class="form__group">
+          <span class="form__label">Должность</span>
+          <input class="form__input" type="text" name="position" required>
+        </label>
+        <label class="form__group">
+          <span class="form__label">E-mail</span>
+          <input class="form__input" type="email" name="email" required>
+        </label>
+        <label class="form__group">
+          <span class="form__label">Телефон</span>
+          <input class="form__input" type="tel" name="phone" required>
+        </label>
+        <p class="form__warning" data-form-email-warning>Обратите внимание на правильность указания адреса электронной почты: на него придет подтверждение регистрации.</p>
+        <p class="form__note">Все поля обязательны для заполнения!</p>
+        <label class="form__agreement">
+          <input class="form__agreement-checkbox" type="checkbox" name="agreement" required>
+          <span class="form__agreement-text">
+          Я даю согласие на обработку моих персональных данных в соответствии с
+          <a href="https://company.drweb.ru/policy/" target="_blank">Политикой конфиденциальности</a>
+        </span>
+        </label>
+        <button class="form__button button button--primary" type="submit" disabled data-form-submit>Зарегистрироваться</button>
+      </form>
+    </section>
+    <section class="banner standard-margin">
+      <h2 class="banner__title">Остались вопросы?</h2>
+      <p class="banner__text">Напишите нам <a class="" href="mailto:marketing@drweb.com">marketing@drweb.com</a></p>
+    </section>
+  </div>
+</main>
+<footer class="footer">
+  <div class="container">
+    <nav class="footer__nav">
+      <ul class="footer__nav-list">
+        <li><a href="#">Для дома</a></li>
+        <li><a href="#">Для бизнеса</a></li>
+        <li><a href="#">Поддержка</a></li>
+        <li><a href="#">Пользователям</a></li>
+        <li><a href="#">Партнерам</a></li>
+        <li><a href="#">О компании</a></li>
+        <li><a href="#">Контакты</a></li>
+        <li><a href="#">Вакансии</a></li>
+        <li class="footer__socials">
+          <div class="socials">
+            <a href="#" class="socials__item">
+              <img src="src/images/icon-tg.svg" alt="Telegram">
+            </a>
+            <a href="#" class="socials__item">
+              <img src="src/images/icon-vk.svg" alt="VK">
+            </a>
+            <a href="#" class="socials__item">
+              <img src="src/images/icon-dzen.svg" alt="Дзен">
+            </a>
+            <a href="#" class="socials__item">
+              <img src="src/images/icon-habr.svg" alt="Хабр">
+            </a>
+            <a href="#" class="socials__item">
+              <img src="src/images/icon-yt.svg" alt="YouTube">
+            </a>
+            <a href="#" class="socials__item">
+              <img src="src/images/icon-rt.svg" alt="Rutube">
+            </a>
+            <a href="#" class="socials__item">
+              <img src="src/images/icon-ok.svg" alt="Одноклассники">
+            </a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div class="footer__bottom">
+      <div class="footer__copyright">
+        <p class="footer__text"><img src="src/images/logo-mark.svg" alt="Доктор Веб" class="footer__copyright-logo">© «Доктор Веб» 2003–2025</p>
+        <p class="footer__text">«Доктор Веб» — российский производитель антивирусных средств защиты информации под маркой Dr.Web.</p>
+      </div>
+
+      <div class="footer__links">
+        <a class="footer__text" href="#">Обработка персональных данных</a>
+        <a class="footer__text" href="#">Безопасная разработка и выпуск обновлений</a>
+      </div>
+
+      <div class="footer__links">
+        <a class="footer__text" href="#">Политика конфиденциальности</a>
+        <a class="footer__text" href="#">Информация по требованиям Минцифры России</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<template id="error-alert">
+  <div class="alert" data-alert="error">
+    <button class="alert__close" type="button" aria-label="Закрыть алерт" data-alert-close></button>
+    <div class="alert__content">
+      <h2 class="alert__title">Что-то пошло не так</h2>
+      <p class="alert__text">Перезагрузите страницу или зайдите позже.</p>
+      <div class="alert__buttons">
+        <button class="button button--primary" data-alert-close>Хорошо</button>
+      </div>
+    </div>
+  </div>
+</template>
+<template id="success-alert">
+  <div class="alert" data-alert="success">
+    <button class="alert__close" type="button" aria-label="Закрыть алерт" data-alert-close></button>
+    <div class="alert__content">
+      <h2 class="alert__title">Регистрация прошла успешно!</h2>
+      <p class="alert__text">В течение 24 часов вы получите письмо с подтверждением регистрации.</p>
+      <div class="alert__buttons">
+        <button class="button button--primary" data-alert-close>Хорошо</button>
+      </div>
+    </div>
+  </div>
+</template>
+<template id="email-error-alert">
+  <div class="alert" data-alert="email-error">
+    <button class="alert__close" type="button" aria-label="Закрыть алерт" data-alert-close></button>
+    <div class="alert__content">
+      <h2 class="alert__title">Ошибка!</h2>
+      <p class="alert__text">Похоже, такой e-mail уже зарегистрирован, введите новый или обратитесь в поддержку</p>
+      <div class="alert__buttons">
+        <button class="button button--primary" data-alert-close>Ввести новый e-mail</button>
+        <button class="button button--outline">Обратиться в поддержку</button>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script type="module" src="src/script.min.js"></script>
+</body>
+</html>

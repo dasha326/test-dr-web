@@ -1,0 +1,15 @@
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+
+.form-section {
+  &__title {
+    font-family: $headings-font-family;
+    font-weight: $headings-font-weight;
+    font-size: 18px;
+    color: $white;
+    text-align: center;
+    @include media-breakpoint-up(sm) {
+      font-size: 40px;
+    }
+  }
+}

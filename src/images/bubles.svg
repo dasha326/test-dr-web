@@ -1,0 +1,75 @@
+<svg width="902" height="851" viewBox="-226 -212.75 1355 1276.5" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g id="bubles-animated">
+    <animateTransform
+      attributeName="transform"
+      type="rotate"
+      dur="26s"
+      repeatCount="indefinite"
+      keyTimes="0;0.22;0.44;0.66;0.88;1"
+      values="0 451 425.5;120 451 425.5;120 451 425.5;240 451 425.5;240 451 425.5;360 451 425.5"
+    />
+
+    <!-- нижний пузырь -->
+    <g filter="url(#blur-bottom)">
+      <animateTransform
+        attributeName="transform"
+        type="translate"
+        additive="sum"
+        dur="26s"
+        repeatCount="indefinite"
+        keyTimes="0;0.22;0.27;0.33;0.44;0.66;0.71;0.77;0.88;1"
+        values="0 0; 0 0; -6 48; 0 0; 0 0; 0 0; -6 48; 0 0; 0 0; 0 0"
+      />
+      <circle cx="434.5" cy="563.5" r="124.5" fill="#5FD900"/>
+    </g>
+
+    <!-- левый пузырь -->
+    <g filter="url(#blur-left)">
+      <animateTransform
+        attributeName="transform"
+        type="translate"
+        additive="sum"
+        dur="26s"
+        repeatCount="indefinite"
+        keyTimes="0;0.22;0.27;0.33;0.44;0.66;0.71;0.77;0.88;1"
+        values="0 0; 0 0; -42 -12; 0 0; 0 0; 0 0; -42 -12; 0 0; 0 0; 0 0"
+      />
+      <circle cx="269" cy="349" r="117" fill="#5FD900"/>
+    </g>
+
+    <!-- правый крупный пузырь -->
+    <g filter="url(#blur-right)">
+      <animateTransform
+        attributeName="transform"
+        type="translate"
+        additive="sum"
+        dur="26s"
+        repeatCount="indefinite"
+        keyTimes="0;0.22;0.27;0.33;0.44;0.66;0.71;0.77;0.88;1"
+        values="0 0; 0 0; 38 -18; 0 0; 0 0; 0 0; 38 -18; 0 0; 0 0; 0 0"
+      />
+      <circle cx="552.5" cy="338.5" r="175.5" fill="#5FD900"/>
+    </g>
+  </g>
+
+  <defs>
+    <filter id="blur-bottom" x="-190" y="-60" width="1250" height="1250" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="100" result="blur-bottom-effect"/>
+    </filter>
+
+    <filter id="blur-left" x="-215" y="-136" width="1200" height="1200" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="100" result="blur-left-effect"/>
+    </filter>
+
+    <filter id="blur-right" x="-150" y="-213.5" width="1350" height="1350" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="100" result="blur-right-effect"/>
+    </filter>
+  </defs>
+</svg>
+
